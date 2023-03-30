@@ -25,7 +25,7 @@
           <tr>
             <td>{{ user.id_user }}</td>
             <td>{{ user.login }}</td>
-            <td><a class="btn btn-outline-secondary" href="{{ url_for('detailUser', username = user.id_user ) }}" role="button">Détail</a></td>
+            <td><a class="btn btn-outline-secondary" href="{{ url_for('detailUser', id_user=user.id_user ) }}" role="button">Détail</a></td>
           </tr>
           {% endfor %}
           
