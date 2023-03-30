@@ -10,35 +10,27 @@
 <div class="container">
   <div class="row">
     <div class="col">
-        Liste des utilisateurs autorisés :
+      Liste des utilisateurs autorisés :
 
-        <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Identifiant</th>
-                <th scope="col">Détail</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td><a class="btn btn-outline-secondary" href="{{ url_for('detailUser') }}" role="button">Détail</a></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td><a class="btn btn-outline-secondary" href="#" role="button">Détail</a></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                
-                <td><a class="btn btn-outline-secondary" href="#" role="button">Détail</a></td>
-              </tr>
-            </tbody>
-          </table>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Identifiant</th>
+            <th scope="col">Détail</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{ user.id_user }}</td>
+            <td>{{ user.login }}</td>
+            <td><a class="btn btn-outline-secondary" href="{{ url_for('detailUser', username = user.id_user ) }}" role="button">Détail</a></td>
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

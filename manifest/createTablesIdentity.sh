@@ -5,11 +5,11 @@ CREATE TABLE IF NOT EXISTS Utilisateur
     nom VARCHAR(50),
     prenom VARCHAR(50),
     naissance DATE
-);
+) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS Authentification 
 (
     login VARCHAR(50) PRIMARY KEY NOT NULL,
     password VARCHAR(50) NOT NULL,
     id_user VARCHAR(50) REFERENCES utilisateur(id_user)
-);
+) ENGINE=InnoDB;
